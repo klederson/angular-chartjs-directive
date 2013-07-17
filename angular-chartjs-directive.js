@@ -1,5 +1,5 @@
 angular.module("chartjs-directive", []).directive('chartjs',['$filter', function ($filter) {
-  return {
+	return {
 		restrict: "E",
 		replace: true,
 		transclude: true,
@@ -20,12 +20,16 @@ angular.module("chartjs-directive", []).directive('chartjs',['$filter', function
 			$scope.$watch('width',function(newValue, oldValue) {
 				element[0].width = newValue;
 				$scope.generate()
-			})
+			});
 
 			$scope.$watch('height',function(newValue, oldValue) {
 				element[0].height = newValue;
-				$scope.generate()
-			})
+				$scope.generate();
+			});
+
+			$scope.$watch('data',function(newValue,oldValue) {
+				$scope.generate();
+			},true)
 		}
 	}
 }]);
