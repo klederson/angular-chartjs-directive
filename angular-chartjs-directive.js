@@ -32,8 +32,6 @@ angular.module("chartjs-directive", []).directive('chartjs',['$filter', function
 				$scope.$watch("references.parent.obj.clientWidth",function(newValue,old) {
 					if(newValue != old)
 						$scope.width = (newValue * $scope.references.self.width)/$scope.references.parent.width;
-
-					console.log($scope.width)
 				})
 			}
 			
