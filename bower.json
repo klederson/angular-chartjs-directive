@@ -1,5 +1,5 @@
 {
-  "name": "angular-chartjs-directive",
+  "name": "chartjs-directive",
   "version": "1.0.0",
   "main": "./src/angular-chartjs-directive.js",
   "dependencies": {
