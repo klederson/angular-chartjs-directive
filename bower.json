@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "main": "./src/angular-chartjs-directive.js",
   "dependencies": {
-    "angular": "1.0.8"
+    "angular": ""
   }
 }
