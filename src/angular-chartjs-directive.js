@@ -39,13 +39,13 @@ angular.module("chartjs-directive", []).directive('chartjs',['$filter', function
 			responsive : "@"
 		},
 		template: '<canvas></canvas>',
-		link: function ($scope, element, attr /*, ctrl */) {
+		link: function ($scope, element, attr) {
 			var ctx = element[0].getContext('2d');
 			$scope.references = {
 				parent : {
-					obj :  $(element[0]).parent()[0],
-					width : $(element[0]).parent()[0].clientWidth,
-					height : $(element[0]).parent()[0].clientHeight
+					obj : element[0].parentNode,
+					width : element[0].parentNode.clientWidth,
+					height : element[0].parentNode.clientHeight
 				},
 				self : {
 					width : $scope.width,
@@ -65,7 +65,7 @@ angular.module("chartjs-directive", []).directive('chartjs',['$filter', function
 			
 
 			$scope.generate = function() {
-				$scope.instance = eval('new Chart(ctx).' +attr.isType+  '($scope.data,$scope.options)');
+				$scope.instance = eval('new Chart(ctx).' +attr.isType+ '($scope.data,$scope.options)');
 			}
 
 			$scope.$watch('width',function(newValue, oldValue) {
